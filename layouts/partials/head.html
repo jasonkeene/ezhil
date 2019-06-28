@@ -1,5 +1,5 @@
 <div class="header">
-	<h1 class="site-title">{{ .Site.Title }}</h1>
+	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 	<div class="site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		<h2>{{ .Site.Params.Subtitle | markdownify }}</h2>
@@ -7,7 +7,7 @@
 		<nav class="nav social">
 			<ul class="flat">
 				{{- range $index, $key := .Site.Params.Social -}}
-				<a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+				<a href="{{ $key.url }}" title="{{ $key.name }}" target="_blank"><i data-feather="{{ $key.icon }}"></i></a>
 				{{- end -}}
 			</ul>
 		</nav>
